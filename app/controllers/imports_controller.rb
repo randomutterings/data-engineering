@@ -8,9 +8,17 @@ class ImportsController < ApplicationController
     @import = Import.new(import_params)
 
     respond_to do |format|
-      if @import.save && @import.process
-        format.html { redirect_to @import, notice: 'Import processed successfully.' }
-      else
+      begin
+        Import.transaction do
+          if @import.save && @import.process
+            format.html { redirect_to @import, notice: 'Import processed successfully.' }
+          else
+            format.html { render action: 'new' }
+          end
+        end
+      rescue Exception => exc
+        Rails.logger.error("Import failed: #{exc}")
+        @import.errors[:tsv] << "The import failed, please check your file and try again. Detail: #{exc}"
         format.html { render action: 'new' }
       end
     end

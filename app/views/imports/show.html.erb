@@ -1,0 +1,26 @@
+<h1>Import</h1>
+
+<table>
+  <tr>
+    <th>Customer Name</th>
+    <th>Item Description</th>
+    <th>Item Price</th>
+    <th>Purchase Count</th>
+    <th>Merchant Address</th>
+    <th>Merchant Name</th>
+  </tr>
+  <% @import.sales.each do |sale| %>
+    <tr>
+      <td><%= sale.customer_name %></td>
+      <td><%= sale.item_description %></td>
+      <td><%= number_to_currency(sale.price) %></td>
+      <td><%= sale.count %></td>
+      <td><%= sale.merchant_address %></td>
+      <td><%= sale.merchant_name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>Total gross revenue of <%= number_to_currency(@import.total) %></p>
+
+<p><%= link_to "New Import", new_import_path %></p>
