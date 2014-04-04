@@ -46,3 +46,4 @@ end
 
 gem 'rspec-rails'
 gem 'shoulda-matchers'
+gem 'paperclip'
