@@ -47,3 +47,4 @@ end
 gem 'rspec-rails'
 gem 'shoulda-matchers'
 gem 'paperclip'
+gem 'omniauth-twitter'

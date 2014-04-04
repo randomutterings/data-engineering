@@ -8,11 +8,21 @@
 </head>
 <body>
 
-<% flash.each do |name, msg| %>
-  <div><%= msg %></div>
-<% end %>
+<div>
+  <% if current_user %>
+    Signed in as <%= current_user.name %>!
+    <%= link_to "Sign out", signout_path %>
 
-<%= yield %>
+    <% flash.each do |name, msg| %>
+      <div><%= msg %></div>
+    <% end %>
+
+    <%= yield %>
+  <% else %>
+    <%= link_to "Sign in with OAuth Developer", "/auth/developer" unless Rails.env.production? %>
+    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  <% end %>
+</div>
 
 </body>
 </html>
