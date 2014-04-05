@@ -32,7 +32,9 @@ Imagine LivingSocial has just acquired a new company.  Unfortunately, the compan
 
 ### Configure Twitter OAuth (optional)
 
-* Visit https://apps.twitter.com and create a new application. Then click on Test OAuth to get the consumer key and secret. Don’t confuse these values with the access token and secret as the're for something different.
+* Visit https://apps.twitter.com and create a new application.  Make sure to enter a value for the callback URL.  It doesn't matter what it is but if you leave it blank, the application will be restricted from using callbacks.
+
+* Click on Test OAuth (Top Right) to get the consumer key and secret. Don’t confuse these values with the access token and secret as the're for something different.
 
 * This application looks for the key and secret in environment variables.  Specify them like this `TWITTER_KEY=my_twitter_key TWITTER_SECRET=my_twitter_secret rails s`
 
