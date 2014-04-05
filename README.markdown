@@ -12,7 +12,7 @@ Imagine LivingSocial has just acquired a new company.  Unfortunately, the compan
 
 * Clone the repo
 
-  `git clone git@github.com:randomutterings/data-engineering.git`
+  `git clone git@github.com:randomutterings/data-engineering.git -b first-pass`
 
 * Create the database
 
