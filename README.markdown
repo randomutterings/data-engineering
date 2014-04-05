@@ -14,15 +14,19 @@ Imagine LivingSocial has just acquired a new company.  Unfortunately, the compan
 
   `git clone git@github.com:randomutterings/data-engineering.git -b first-pass`
 
+* Install dependencies
+
+  `cd data-engineering && bundle install`
+
 * Create the database
 
-  `cd data-engineering && rake db:migrate`
+  `rake db:migrate`
 
 * Start the webserver
 
   `rails s`
 
-* Access the app
+* Access the application
 
   http://localhost:3000
 
